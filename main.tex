@@ -5,6 +5,9 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{todonotes}
+
+
+
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
 \tikzstyle{process} = [rectangle,rounded corners, minimum width=3cm,text width=10cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
@@ -96,16 +99,14 @@
 
 \transtrue
 \vocalize
-
+%--------------------------------------------------------------
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
-
-\begin{frame}[allowframebreaks]
+%--------------------------------------------------------------
+\begin{frame}
 \frametitle{Overview} % Table of contents slide, comment this block out to remove it
-\tableofcontents [sections={1-7}]
-\framebreak
-\tableofcontents [sections={8-13}]
+\tableofcontents 
 \end{frame}
 
 
@@ -143,9 +144,9 @@
 \end{frame}
 
 %------------------------------------------------
-\subsection{Arabic Dialects (DA)}
+\subsection{Arabic Dialects (AD)}
 \begin{frame}
-\frametitle{Arabic Dialects (DA)}
+\frametitle{Arabic Dialects (AD)}
 \begin{itemize}
 \item Spoken variations of Arabic 
 \begin{itemize}
@@ -181,16 +182,50 @@
        \item \RL{حقوق} (rights) sounds \RL{حوءوء} in Lebanese
     \ei 
     \item Morphology: 
-      \bi \I \RL{بديش } Negation of\RL{ بدي } (I want)
+      \bi \I \RL{بديش }, \RL{ما بدي}: negations of \RL{ بدي } (I want)
       \ei 
     \item Orthography
-    \item Syntax, and semantics
+    \bi 
+    \I \RL{المجيد}
+    \ei
+    \item Semantics
+    \bi
+    \I \RL{ليمون} in Lebanese means oranges and means lemon in Gulf and Egyptian
+    \ei
+     \item Syntax
 \end{itemize}
 \end{frame}
 %------------------------------------------------
-\subsection{Analysis of social media content}
+\subsection{Analysis of Social Media Content}
+
 \begin{frame}
-\frametitle{Social media content}
+\frametitle{Social Media }
+\begin{itemize}
+\item Widespread use of social media as platforms
+\begin{itemize}
+\item Socialization: personal events, introductions, reconnecting
+\item Communication: user interaction, information exchange
+\item Advertisements: engaging customers
+\end{itemize}
+\item Stakeholders are interested in analysis of content
+\end{itemize}
+
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+  \frametitle{ Stakeholders and Possible Questions} 
+  
+  \bi
+  \I Advertisers: how to associate a product with a popular theme
+  \I Politicians: what topics interest target demographics
+  \I Companies: how to increase brand recognition
+  \I Researchers: which posts are useful to extract
+  \ei 
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Arabic Social Media Content (SMC)}
 \begin{itemize}
 \item Arab social media users write multilingual posts
 \begin{itemize}
@@ -208,35 +243,7 @@
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Social Media Content Analysis}
-\begin{itemize}
-\item Aims:
-\begin{itemize}
-\item collecting data from social media posts
-\item extracting entities from posts 
-\item extracting relations from posts 
-\item analyzing the extracted entities
-\end{itemize}
-\end{itemize}
-%\includegraphics{img0002.png}
-
-\end{frame}
-%------------------------------------------------
-
-\begin{frame}
-
-  \frametitle{ Stakeholders and Possible Questions} 
-  
-  \bi
-  \I advertisers: how to associate a product with a popular theme
-  \I politicians: what topics interest target demographics
-  \I companies: how to increase brand recognition
-  \I researchers: which posts are useful to extract
-  \ei 
-\end{frame}
-
-\begin{frame}
-\frametitle{Simple Analysis: trending topics}
+\frametitle{Simple Analysis: Trending Topics}
 \begin{columns}
  \column{0.54\linewidth}
            \begin{itemize}
@@ -247,9 +254,11 @@
         \column{0.42\linewidth}
         \centering
         \includegraphics[scale=0.4]{img0003.png}
+        
+        {\tiny \url{http://expertinreputation.com/wp-content/uploads/2016/07/social-media-trends.jpg}} 
 \end{columns}
 
-%\includegraphics[scale=0.4]{img0003.png}
+
 
 \end{frame}
 %------------------------------------------------
@@ -257,30 +266,46 @@
 
 \begin{frame}
 \frametitle{Simple Trending Analysis Example }
-\includegraphics[width=.9\columnwidth]{trends}
-\end{frame}
 
+%\includegraphics[width=.9\columnwidth]{trends}
+\includegraphics[scale=0.75]{trends2}
+\end{frame}
+%------------------------------------------------
 
 \begin{frame}
-\frametitle{Sophisticated Analysis: information extraction}
+\frametitle{Sophisticated Analysis: Information Extraction}
 \begin{itemize}
-\item Deep understanding of social media content
+\item Deeper understanding of social media content
 \item Allows network flow analysis
 \begin{itemize}
 \item Information propagation
 \end{itemize}
-\item Leverages linguistic and graph analysis techniques
-\begin{itemize}
-  \item Extract entities $V$
-\item Extract relation $E \subseteq V \times V$
-\item Construct graphs
-\item Analyze graphs
-\end{itemize}
+\item Leverages computational linguistic and graph analysis techniques
 \end{itemize}
 
 \end{frame}
+
+
 %------------------------------------------------
-\section{Motivating Example}
+
+\begin{frame}
+\frametitle{Aims of SMC Analysis }
+
+\begin{itemize}
+\item Collect data from social media posts
+\item Extract entities from posts $V$
+\item Extract relation $E \subseteq V \times V$
+\item Analyze the extracted graph entities $G=(V,E)$ 
+   \bi
+   \I In an attempt to answer stakeholder questions
+   \ei
+
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+\section{Motivating Example: World Cup Tweet, Missing Journalist}
 \begin{frame}
 \frametitle{Motivating Example}
 \begin{figure}[!htb]
@@ -295,7 +320,7 @@
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Graph illustration}
+\frametitle{Graph Illustration}
 \begin{figure}[!htb]
    \centering
     \includegraphics[scale=0.4]{img0008.png}
@@ -305,25 +330,32 @@
 \end{frame}
 %------------------------------------------------
 \begin{frame}
-\frametitle{Motivating Example}
+\frametitle{Entities and Relational Entities in World Cup Tweet }
 
-\begin{table}[]
+  \begin{columns}
+    \column{8cm} 
+%\begin{table}[]
+  \resizebox{.95\columnwidth}{!}{
 \begin{tabular}{|l|l|l|}
 \hline
 \multicolumn{3}{|c|}{\cellcolor[HTML]{C0C0C0}\textbf{Entities}}   \\ \hline
 \textbf{person names} & \textbf{country names} & \textbf{objects} \\ \hline
-Fadlo                 & Germany                & World Cup        \\ \hline
-Wael                  & France                 & Confederation    \\ \hline
-Klopp                 &                        &                  \\ \hline
+Fadlo Khuri           & Germany                & World Cup        \\ \hline
+Wael Darwish          & France                 & Confederation    \\ \hline
+Jeurgon Klopp         &                        &                  \\ \hline
 Joachim Low           &                        &                  \\ \hline
 \end{tabular}
-\end{table}
-
-\end{frame}
+}
+%\end{table}
+%
+%\end{frame}
 %------------------------------------------------
-\begin{frame}
-\frametitle{Motivating Example}
-\begin{table}[]
+%\begin{frame}
+%\frametitle{Relational indicators in world cup tweet }
+    \column{5cm} 
+\onslide<2->{
+%\begin{table}[]
+\resizebox{.95\columnwidth}{!}{
 \begin{tabular}{|l|l|}
 \hline
 \multicolumn{2}{|c|}{\cellcolor[HTML]{C0C0C0}\textbf{Relations}} \\ \hline
@@ -333,24 +365,28 @@ step down                    & ponderous                         \\ \hline
 score 10                     & predictable                       \\ \hline
 replace by                   & clueless                          \\ \hline
 \end{tabular}
-\end{table}
-\end{frame}
-%------------------------------------------------
-\begin{frame}
-\frametitle{Motivating Example}
-\begin{itemize}
-\item \textbf{The entities extracted are (nouns: names, objects):} 
-\\ Fadlo, Germany, Wael, Klopp, Joachim Low, World Cup, Confederation, and France.
-
-\item \textbf{The relational entities extracted are (verbs, adjectives and prepositions):}
-\\ follow, support, winning, step down, ponderous, score 10, and replace by
-\end{itemize}
-
+%\end{table}
+} 
+} 
+\end{columns}
 \end{frame}
 %------------------------------------------------
 
+%\begin{frame}
+%\frametitle{Motivating Example}
+%\begin{itemize}
+%\item \textbf{The entities extracted are (nouns: names, objects):} 
+%\\ Fadlo, Germany, Wael, Klopp, Joachim Low, World Cup, Confederation, and France.
+%
+%\item \textbf{The relational entities extracted are (verbs, adjectives and prepositions):}
+%\\ follow, support, winning, step down, ponderous, score 10, and replace by
+%\end{itemize}
+%
+%\end{frame}
+%------------------------------------------------
+
 \begin{frame}
-\frametitle{Motivating Example}
+\frametitle{World Cup Tweet: Entity Annotation }
 \begin{figure}[!htb]
    \centering
     \includegraphics[scale=0.5]{img0004_1.png}
@@ -362,7 +398,7 @@ replace by                   & clueless                          \\ \hline
 
 %------------------------------------------------
 \begin{frame}
-\frametitle{Motivating Example}
+\frametitle{World Cup Tweet: Relational Entity Annotation }
 \begin{figure}[!htb]
    \centering
     \includegraphics[scale=0.5]{img0004_2.png}
@@ -381,20 +417,18 @@ replace by                   & clueless                          \\ \hline
 
 %------------------------------------------------
 \begin{frame}
-\frametitle{Motivating Example}
+\frametitle{World Cup Tweet: Graph Entities }
 \begin{figure}[!htb]
    \centering
     \includegraphics[scale=0.5]{img0004_3.png}
     
 \end{figure}
-%\includegraphics{img0005.png}
-
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Graph illustration}
+\frametitle{Knowledge Graph Illustration}
 \begin{figure}[!htb]
    \centering
     \includegraphics[scale=0.4]{img0008.png}
@@ -405,7 +439,7 @@ replace by                   & clueless                          \\ \hline
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Motivating Example 2}
+\frametitle{Missing Journalist Example }
 \begin{figure}[!htb]
    \centering
     \includegraphics[scale=0.55]{img0009.png}
@@ -415,10 +449,10 @@ replace by                   & clueless                          \\ \hline
 \end{frame}
 %------------------------------------------------
 \begin{frame}
-\frametitle{Graph Construction}
+\frametitle{Missing Journalist Example: Graph Illustration}
 \begin{figure}[!htb]
    \centering
-    \includegraphics[scale=0.8]{img0011.png}
+    \includegraphics[scale=0.38]{graph2.png}
     
 \end{figure}
 
@@ -427,39 +461,56 @@ replace by                   & clueless                          \\ \hline
 
 %------------------------------------------------
 \begin{frame}
-\frametitle{Motivating Example 2}
+\frametitle{Entities and Relational Entities in Missing Journalist Example }
+
 \resizebox{0.99\textwidth}{!}{
-\begin{table}[]
 \begin{tabular}{|l|l|l|l|}
 \hline
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}\textbf{Entities}}            \\ \hline
-\textbf{person names} & \textbf{places} & \textbf{dates}     & \textbf{other nouns}            \\ \hline
-\RL{جمال خاشقجي}      & \RL{قنصلية}     & 2018 2\RL{أكتوبر } & \RL{احتجاز} \\ \hline
-             & \RL{سعودية}     &                    &             \\ \hline
+\multicolumn{3}{|c|}{\cellcolor[HTML]{C0C0C0}\textbf{Entities}}\\ \hline
+\textbf{person names} & \textbf{places} & \textbf{dates}    \\ \hline
+\RL{جمال خاشقجي}      & \RL{قنصلية}     & 2018 2\RL{أكتوبر }\\ \hline
+ADHRB       & \RL{سعودية}     &                              \\ \hline
 \end{tabular}
-\end{table}
+}
+\onslide<2->{
+\\[0.4in]
+\centering
+
+\begin{tabular}{|c|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+\textbf{Relational Entities} \\ \hline
+\RL{مستجدات}                 \\ \hline
+\RL{احتجاز}                  \\ \hline
+\RL{إخفاؤه}                  \\ \hline
+\RL{تضع}                     \\ \hline
+\end{tabular}
 }
 \end{frame}
+
 %------------------------------------------------
 \begin{frame}
-\frametitle{Motivating Example 2}
+\frametitle{Missing Journalist Example: Entities and Relational Entities}
+
 \begin{itemize}
 \item \textbf{The entities extracted are:}
 \\ ADHRB, \RL{جمال خاشقجي},
-\RL{احتجاز},
 \RL{قنصلية},
 \RL{سعودية},
 2018 2\RL{أكتوبر } 
 \\
 \item \textbf{The relational entities are:}\\
-\RL{من}
-
+\RL{مستجدات},
+\RL{احتجاز},
+\RL{إخفاؤه},
+\RL{تضع}
 \end{itemize}
+
 \end{frame}
 
 %------------------------------------------------
 \begin{frame}
-\frametitle{Motivating Example 2}
+\frametitle{Missing Journalist Example: Entity Annotation}
 \begin{figure}[!htb]
    \centering
     \includegraphics[scale=0.55]{img0009_1.png}
@@ -470,7 +521,7 @@ replace by                   & clueless                          \\ \hline
 
 %------------------------------------------------
 \begin{frame}
-\frametitle{Motivating Example 2}
+\frametitle{Missing Journalist Example: Relational Entity Annotation}
 \begin{figure}[!htb]
    \centering
     \includegraphics[scale=0.55]{img0009_2.png}
@@ -481,14 +532,33 @@ replace by                   & clueless                          \\ \hline
 
 %------------------------------------------------
 \begin{frame}
-\frametitle{Graph Construction}
+\frametitle{Knowledge Graph Illustration}
 \begin{figure}[!htb]
    \centering
-    \includegraphics[scale=0.8]{img0011.png}
+    \includegraphics[scale=0.38]{graph2.png}
     
 \end{figure}
 
 \end{frame}
+%------------------------------------------------
+\begin{frame}
+\frametitle{Knowledge Graph Aggregation and Cross-referencing} 
+
+\bi
+\I Aggregate all unit knowledge graphs into a global knowledge graph
+  \bi \I We need cross-referencing for entities and relational entities
+  \ei 
+\I Information flow analysis across the global knowledge graph
+  \bi \I Flow could be across users and their followers or retweeters
+      \I Flow could be across topics and sub-topics 
+  \ei 
+\I Use of rich sub-graphs to dis-ambiguate harder sub-graphs 
+  \bi \I Cross-document analysis 
+  \ei 
+\ei 
+
+\end{frame} 
+
 
 %------------------------------------------------
 \section{Challenges}
@@ -502,9 +572,9 @@ replace by                   & clueless                          \\ \hline
 \item Analysers
 \end{itemize}
 \item Around {\color{red}5 million} Arabic users on Twitter were recorded by early 2014 \cite{twitter_social}.
-\item Existing information extraction tools have limited support for MSA and lack support for DA.
-\item Work on IE from MSA text exists\cite{Madamira2014, Yamama2016}.
-\item Work on IE from DA text is still lagging and needs improvement\cite{Madar2018, Guidelines2018, Curras2017}.
+\item NLP tools have limited support for MSA and lack support for AD.
+\item  Morphological analysers from MSA text exists\cite{Madamira2014, Yamama2016}.
+\item Morphological analysers from AD text is still lagging and needs improvement\cite{Madar2018, Guidelines2018, Curras2017}.
 \end{itemize}
 
 \end{frame}
@@ -513,7 +583,7 @@ replace by                   & clueless                          \\ \hline
 \begin{frame}
 \frametitle{Propose}
 \begin{itemize}
-\item A cross-document analysis methodology for Information Extraction from DA content.
+\item A cross-document analysis methodology for Information Extraction including AD content
 \item Cross-document NLP studies:
 \begin{itemize}
 \item coreference of entities in separate documents (relation between two words that have a common referent ex: related by topic).
@@ -525,21 +595,28 @@ replace by                   & clueless                          \\ \hline
 \end{frame}
 
 %------------------------------------------------
-\begin{frame}[allowframebreaks]
-\frametitle{Propose}
+\begin{frame}
+\frametitle{Cross Document Methodology}
 \begin{itemize}
 \item The methodology requires the construction and the application of the following necessary resources:
 \begin{itemize}
     \item Construct computational linguistic models for several dialects 
     \item Extend existing computational linguistic models for existing Arabic dialect models.
+\end{itemize}
+
     \item The computational linguistic models take text as input and return linguistic features such as part of speech, gender, number, voice, stem, and aspect as output.
-    \framebreak
+\end{itemize}
+\end{frame}
+%\framebreak
+%------------------------------------------------
+\begin{frame}
+\frametitle{Cross Document Methodology}
+\begin{itemize}
      \item Develop and use cross-reference metrics to construct relations between the extracted features.
      \item Construct graph theories (entities and relations) and use graph construction techniques to relate the extracted features.
     \item Use graph analysis techniques to analyze the extracted graphs and draw insights from them.
 \end{itemize}
 
-\end{itemize}
 
 \end{frame}
 %------------------------------------------------
@@ -779,7 +856,7 @@ vertices
 \centering
 
 \begin{tikzpicture}[node distance=2cm,scale=0.7,transform shape]
-\node (propose) [process] {\textbf{Propose:} a cross-document methodology for IE from DA texts};
+\node (propose) [process] {\textbf{Propose:} a cross-document methodology for IE from AD texts};
 
 \node (extract) [process, below of=propose] {\textbf{Extract:} linguistic features from the tweet texts};
 
@@ -820,7 +897,7 @@ vertices
 \end{frame}
 %------------------------------------------------
 
-\begin{frame}[<+->]
+\begin{frame}
 \frametitle{Proposed Methodology}
 \framesubtitle{Construct computational linguistic models for several dialects}
 %\includegraphics{img0023.png}
@@ -828,14 +905,11 @@ vertices
 
 
 \textbf{Phonologically:     }\includegraphics[scale=0.3]{img0022.png}
-\begin{itemize}
-    \item Gulf Arabic pronounces \RL{ق} as /g/ 
-    \\ e.g. \RL{قرب} (approach, pronounced as 'garib' in Gulf)
+\begin{itemize}[<+->]
+    \item Gulf Arabic pronounces \RL{ق} as /g/~\\ e.g. \RL{قرب} (approach, pronounced as 'garib' in Gulf)
     \item Levantine pronounces it as the glottal stop ('arib)
     \item Gulf Arabic merges \RL{ض} into \RL{ظ}
-    \item In Gulf Arabic, \RL{ج} is pronounced as \RL{ي} in many words
-    
-    \\e.g. \RL{دجاج} (chicken) is pronounced as \RL{دياي}
+    \item In Gulf Arabic, \RL{ج} is pronounced as \RL{ي} in many words \\e.g. \RL{دجاج} (chicken) is pronounced as \RL{دياي}
 \end{itemize}
 
 \end{frame}
@@ -905,7 +979,7 @@ vertices
 
 \begin{frame}
 \frametitle{Proposed Methodology}
-\framesubtitle{Graph Construction}
+\framesubtitle{Graph Illustration}
 \begin{itemize}
 \item A graph  $G=(V,E)$ 
 \begin{itemize}

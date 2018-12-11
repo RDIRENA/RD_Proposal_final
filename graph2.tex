@@ -1,0 +1,51 @@
+\tikzset{
+  treenode/.style = {shape=circle, solid,
+                     draw, align=center,
+                     top color=white, bottom color=blue!20},
+  constantnode/.style = {treenode,shape=rectangle},
+  labelnode/.style = {treenode,shape=rectangle,line width=0pt},
+  dummy/.style    = {circle,draw}
+}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{tikzpicture}
+  [
+    grow                    = down,
+    level distance          = 3em,
+    edge from parent/.style = {draw, -latex},
+    every node/.style       = {font=\footnotesize},
+  ]
+
+\node (sa) [personnode] {\includegraphics[width=3cm]{saudiflag}\\ \RL{سعودية} };
+
+% \node  (j) [personnode] {\includegraphics[width=3cm,height=3cm,keepaspectratio]{jamal}\\\RL{جمال خاشقجي}};
+ 
+  \draw (5,-8) node [personnode] (i){\includegraphics[width=2cm]{prison}\\ \RL{احتجاز}};
+  \draw (4,-4) node [treenode] (g) {\RL{قنصلية}};
+  \draw (0,-8) node [personnode] (j){\includegraphics[width=3cm,height=3cm,keepaspectratio]{jamal}\\\RL{جمال خاشقجي}};
+  \draw (-2,-4) node[circle,draw,minimum size=2.5cm,
+                      path picture={
+               \node at (path picture bounding box.center){
+                   \includegraphics[width=2.5cm]{twitterImage}
+               };
+           }](e){};
+  \draw (-6,0) node [personnode] (a) {\includegraphics[width=3cm,height=3cm,keepaspectratio]{adhrb}\\{ADHRB}};
+  \draw (-7,-6) node [treenode] (o) {2018 2\RL{أكتوبر}};
+  
+ 
+  \draw [solid] (j) -- (i);
+  \draw [solid] (i) -- (g);
+  \draw [solid] (g) -- (sa);
+  \draw [solid] (sa) -- (e);
+  \draw [solid] (j) -- (e);
+  \draw [solid] (e) -- (a);
+  \draw [solid, sloped, anchor=center, below] (e) -- node[font=\fontsize{15}{0}]  {\RL{من}} (o);
+
+\end{tikzpicture}
+
+\caption{Graph 2 Construction}
+\label{fig:ArGraph}
+\end{figure}
+\FloatBarrier
+
